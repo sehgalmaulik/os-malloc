@@ -33,19 +33,6 @@ requested: 7298
 max heap: 4096
 ```
 
-## Test Cases
-
-The allocator's performance and correctness are tested using the following test cases:
-
-- `TestCase1 (CoalesceTesting)`: This test allocates 500 chunks of 100 bytes each, assigns random values, and then frees every other chunk. Then, it frees the remaining chunks. This tests the allocator's ability to merge adjacent free blocks and reduce wasted memory.
-
-- `TestCase2 (ReuseTesting)`: This test allocates 0.5 GB of memory at once, then frees it and allocates smaller parts. It tests whether the allocator can efficiently reuse the big freed block for smaller requests.
-
-- `TestCase3 (100KSmallAllocations)`: This test allocates a million tiny 1-byte memory blocks. It tests the allocator's performance when handling lots of small allocations, which can lead to wasted memory and slower allocation times.
-
-- `TestCase4 (GrowingAllocations)`: This test allocates memory blocks with increasing sizes, then frees them and reallocates them with decreasing sizes. It tests the allocator's ability to handle different allocation sizes and efficiently reuse freed memory.
-
-
 
 ## Building and Running the Code
 
@@ -68,6 +55,18 @@ Worst-Fit: libmalloc-wf.so
 ```
 
 To run the tests, make sure to compile and run your test suite. There are four test cases under the tests directory.
+
+## Test Cases
+
+The allocator's performance and correctness are tested using the following test cases:
+
+- `TestCase1 (CoalesceTesting)`: This test allocates 500 chunks of 100 bytes each, assigns random values, and then frees every other chunk. Then, it frees the remaining chunks. This tests the allocator's ability to merge adjacent free blocks and reduce wasted memory.
+
+- `TestCase2 (ReuseTesting)`: This test allocates 0.5 GB of memory at once, then frees it and allocates smaller parts. It tests whether the allocator can efficiently reuse the big freed block for smaller requests.
+
+- `TestCase3 (100KSmallAllocations)`: This test allocates a million tiny 1-byte memory blocks. It tests the allocator's performance when handling lots of small allocations, which can lead to wasted memory and slower allocation times.
+
+- `TestCase4 (GrowingAllocations)`: This test allocates memory blocks with increasing sizes, then frees them and reallocates them with decreasing sizes. It tests the allocator's ability to handle different allocation sizes and efficiently reuse freed memory.
 
 
 
