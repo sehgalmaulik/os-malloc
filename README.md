@@ -45,6 +45,8 @@ The allocator's performance and correctness are tested using the following test 
 
 - `TestCase4 (GrowingAllocations)`: This test allocates memory blocks with increasing sizes, then frees them and reallocates them with decreasing sizes. It tests the allocator's ability to handle different allocation sizes and efficiently reuse freed memory.
 
+
+
 ## Building and Running the Code
 
 The code compiles into four shared libraries and six test programs. To build the code, change to your top level assignment directory and type:
@@ -63,7 +65,26 @@ Best-Fit: libmalloc-bf.so
 First-Fit: libmalloc-ff.so
 Next-Fit: libmalloc-nf.so
 Worst-Fit: libmalloc-wf.so
+```
 
 To run the tests, make sure to compile and run your test suite. There are four test cases under the tests directory.
 
----
+
+
+## Performance Comparison
+
+Here is a comparison of the time taken by each allocation strategy and the default system allocator for each test case:
+
+|           | Test Case 1 | Test Case 2 | Test Case 3 | Test Case 4 |
+|-----------|-------------|-------------|-------------|-------------|
+| First Fit | 0.011s      | 2.019s      | 42.998s     | 0.006s      |
+| Best Fit  | 0.007s      | 2.077s      | 42.835s     | 0.006s      |
+| Worst Fit | 0.009s      | 2.088s      | 43.145s     | 0.006s      |
+| Next Fit  | 0.016s      | 0.028s      | 42.104s     | 0.004s      |
+| Default   | 0.004s      | 0.134s      | 0.008s      | 0.005s      |
+
+This table gives you a quick overview of the performance of each strategy. As you can see, the time taken varies depending on the allocation strategy and the type of allocation requests being made.
+
+
+
+
