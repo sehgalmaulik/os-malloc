@@ -84,6 +84,10 @@ Here is a comparison of the time taken by each allocation strategy and the defau
 
 This table gives you a quick overview of the performance of each strategy. As you can see, the time taken varies depending on the allocation strategy and the type of allocation requests being made.
 
+## Copyright 
 
+Copyright © 2023. All rights reserved.
+
+This software is provided for educational purposes only. It is prohibited to use this code, for any college assignment or personal use. Unauthorized distribution, modification or commercial usage is strictly forbidden. Please respect the rights of the author.
 
 
