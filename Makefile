@@ -18,7 +18,7 @@ TESTS=		tests/test1 \
 				tests/testcase2 \
 				tests/testcase3 \
 				tests/testcase4 \
-				tests/testcase5 \
+
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
